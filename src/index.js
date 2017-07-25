@@ -11,8 +11,12 @@ import SignUp from './components/SignUp'
 firebaseApp.auth().onAuthStateChanged(user => {
 	if (user) {
 		console.log('user has signed in or up', user)
+		// If the user pass then have acces to the app route
+		browserHistory.push('/app')
 	} else {
 		console.log('user has sign out or still needs to sign in.')
+		// When sign out user get redirected to sign in page
+		browserHistory.replace('/signin')
 	}
 })
 
