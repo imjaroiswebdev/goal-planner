@@ -12,3 +12,5 @@ const config = {
 export const firebaseApp = firebase.initializeApp(config)
 // Connection with Firebase DB an collection goals
 export const goalRef = firebase.database().ref('goals')
+// Connection with Firebase DB for storing achieved goals
+export const achievedGoalRef = firebase.database().ref('achievedGoals')

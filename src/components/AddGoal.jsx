@@ -13,7 +13,9 @@ class AddGoal extends Component {
 	addGoal() {
 		console.log('this', this)
 		const { title } = this.state
-		const { email } = this.props // getting email from store and it comes through props
+		// Getting email from Store (Redux) because now we an 
+		// specific reducer for user
+		const { email } = this.props.user
 		goalRef.push({email, title})
 	}
 
@@ -43,9 +45,9 @@ class AddGoal extends Component {
 }
 
 function mapStateToProps(state) {
-	const { email } = state;
+	const { user } = state;
 	return {
-		email
+		user
 	}
 }
 
